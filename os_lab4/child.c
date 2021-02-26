@@ -51,7 +51,7 @@ void func(FILE *input,Data *data) {
 }
 
 int main(int argc, char *argv[]) {
-    int fd = shm_open(MEMORY_NAME, O_EXCL | O_CREAT | O_RDWR, S_IRUSR | S_IWUSR);
+    int fd = shm_open(MEMORY_NAME, O_EXCL | O_CREAT | O_RDWR, 00600);
     if(fd < 0){
         printf("Error sh_open\n");
         return -2;
