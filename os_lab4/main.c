@@ -33,7 +33,7 @@ int main(int argc, char *argv[]){
         if (WEXITSTATUS(status) != 0) {
             return -2;
         }
-        int fd = shm_open(MEMORY_NAME, O_RDONLY, S_IRUSR | S_IWUSR);
+        int fd = shm_open(MEMORY_NAME, O_RDONLY, 00600);
         if(fd == -1){
             printf("Error open shared memory file\n");
             return -2;
