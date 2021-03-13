@@ -15,7 +15,7 @@ int main(int argc, char* argv[]){
     printf("write 0 to stop programm\n");
     for(;;){
         printf("Enter string: ");
-        scanf("%s", str);
+        fgets(str, sizeof(str), stdin);
         if(str[0] == '0'){
             return 0;
         }
