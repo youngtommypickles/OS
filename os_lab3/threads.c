@@ -41,21 +41,33 @@ int main(int argc, char* argv[]){
         return 0;
     }
 	int thread_number = atoi(argv[1]);
+	if(!thread_number){
+		printf("n must be > 0\n");
+		return 0;
+	}
 	int n, m;
 	printf("Thread number: %d\n", thread_number);
 	printf("Enter the number of degree of 1 polynomial: ");
 	scanf("%d", &n);
+	if(!n){
+		printf("n must be > 0\n");
+		return 0;
+	}
 	int* first = malloc(sizeof(int) * n);
 	for(int i = n-1; i >= 0; --i){
 		scanf("%d", &first[i]);
 	}
 	printf("Enter the number of degree of 2 polynomial: ");
 	scanf("%d", &m);
+	if(!m){
+		printf("n must be > 0\n");
+		return 0;
+	}
 	int* second = malloc(sizeof(int) * m);
 	for(int i = m-1; i >= 0; --i){
 		scanf("%d", &second[i]);
 	}
-	int* result = malloc(sizeof(int) * (n+m-1));
+	int* result = malloc(sizeof(int) * (n+m));
 	for(int i = 0; i < n+m; ++i){
 		result[i] = 0;
 	}
